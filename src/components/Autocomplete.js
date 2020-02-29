@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 class Autocomplete extends Component {
+    static propTypes = {
+        suggestions: PropTypes.instanceOf(Array)
+    };
 
     static defaultProps = {
         suggestions: []
-    }
+    };
     constructor(props){
         super(props);
         this.state = {
