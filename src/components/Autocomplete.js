@@ -92,12 +92,21 @@ class Autocomplete extends Component {
             state:{
                 activeSuggestion,
                 filteredSuggestion,
-                showSuggestion,
+                showSuggestions,
                 userInput
             }
         } = this;
+
+        let suggestionsListComponent;
+
+        if (showSuggestions && userInput) {
+        }
+
         return(
-            <input type="text" onChange={onChange} onKeyDown={onKeyDown} ></input>
+            <Fragment>
+                <input type="text" onChange={onChange} onKeyDown={onKeyDown} ></input>
+                {suggestionsListComponent}
+            </Fragment>
         );
     }
 }
