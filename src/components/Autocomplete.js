@@ -100,6 +100,31 @@ class Autocomplete extends Component {
         let suggestionsListComponent;
 
         if (showSuggestions && userInput) {
+            if(filteredSuggestions.length){
+                suggestionsListComponent = (
+                    <ul class="suggestions">
+                        {filteredSuggestions.map((suggestion, index) => {
+                            let className;
+
+                            // Flag the active suggestion with a class
+                            if (index === activeSuggestion) {
+                                className = "suggestion-active";
+                            }
+                            return (
+                                <li className={className} key={suggestion} onClick={onClick}>
+                                    {suggestion}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                );
+            } else {
+                suggestionsListComponent = (
+                    <div class="no-suggestions">
+                        <em>No suggestion available</em>
+                    </div>
+                );
+            }
         }
 
         return(
