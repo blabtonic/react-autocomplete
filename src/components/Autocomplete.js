@@ -19,11 +19,11 @@ class Autocomplete extends Component {
             filteredSuggestion: [],
 
             // Whether or not the suggestion list is shown
-            showSuggestion: false,
+            showSuggestions: false,
 
             // What the user has entered
             userInput: ""
-        }
+        };
     }
 
     // Event fires when input value changes 
@@ -33,14 +33,14 @@ class Autocomplete extends Component {
 
         // Filter our suggestion that are not in user's input
         const filteredSuggestions = suggestions.filter(
-            suggestion => suggestion.toLowerCase().indexOf(userInput.toUpperCase())
+            suggestion => suggestion.toUpperCase().indexOf(userInput.toUpperCase()) > -1
         );
 
         // Update the user input and filtered suggestion, reset active suggestion
         this.setState({
             activeSuggestion: 0,
             filteredSuggestions,
-            showSuggestion:true,
+            showSuggestions:true,
             userInput: event.currentTarget.value
         });
     };
@@ -51,7 +51,7 @@ class Autocomplete extends Component {
         this.setState({
             activeSuggestion: 0,
             filteredSuggestions: [],
-            showSuggestion: false,
+            showSuggestions: false,
             userInput: event.currentTarget.innerText
         });
     };
@@ -63,7 +63,7 @@ class Autocomplete extends Component {
         if (event.keyCode === 13) {
             this.setState({
                 activeSuggestion: 0,
-                showSuggestion: false,
+                showSuggestions: false,
                 userInput: filteredSuggestions[activeSuggestion]
             });
         }
@@ -91,7 +91,7 @@ class Autocomplete extends Component {
             onKeyDown,
             state:{
                 activeSuggestion,
-                filteredSuggestion,
+                filteredSuggestions,
                 showSuggestions,
                 userInput
             }
