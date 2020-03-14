@@ -1,3 +1,8 @@
+/**
+ * BOTTOM AUTOSEARCH 
+ * suggestions gets called as a product array, array will need to be from database or JSON
+ * more customizable
+ */
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
 

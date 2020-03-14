@@ -1,3 +1,7 @@
+/**
+ * TOP AUTOSEARCH 
+ * suggestions gets called on the app as props
+ */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
