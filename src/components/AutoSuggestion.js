@@ -21,6 +21,18 @@ const products = [
     name: "54/39NDJU5G"
   },
   {
+    name: "55/39NDJU5G"
+  },
+  {
+    name: "56/39NDJU5G"
+  },
+  {
+    name: "57/39NDJU5G"
+  },
+  {
+    name: "58/39NDJU5G"
+  },
+  {
     name: "LMED9434"
   },
   {
